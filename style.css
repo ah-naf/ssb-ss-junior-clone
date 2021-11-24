@@ -633,3 +633,29 @@ footer {
     opacity: 1;
     padding-left: 5px;
 }
+
+.temp {
+    display: none;
+}
+
+@media screen and (max-width: 1150px) {
+    header,
+    main,
+    section,
+    article,
+    footer {
+        display: none;
+    }
+    .temp {
+        display: block;
+        text-align: center;
+        font-weight: 700;
+        font-size: 50px;
+    }
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
