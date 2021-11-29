@@ -21,7 +21,6 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: auto;
-    justify-content: space-between;
     padding: 20px 10px 20px;
 }
 
@@ -133,6 +132,7 @@ nav button:hover {
 main {
     max-width: 1200px;
     margin: 100px auto 0;
+    padding: 0 30px;
 }
 
 .feature-container {
@@ -370,7 +370,7 @@ main {
 section {
     background-color: #222e5e;
     color: white;
-    padding: 100px 0;
+    padding: 100px 30px;
     margin-top: 100px;
     text-align: center;
 }
@@ -400,7 +400,7 @@ section {
 }
 
 .course-col {
-    flex-basis: 22%;
+    flex-basis: 30%;
     background-color: rgba(0, 0, 0, 0.1);
     padding: 10px;
     margin-right: 20px;
@@ -441,6 +441,7 @@ section {
 article {
     max-width: 1200px;
     margin: 150px auto 0;
+    padding: 0 30px;
 }
 
 .ss-row {
@@ -600,6 +601,7 @@ article {
 footer {
     max-width: 1200px;
     margin: 50px auto;
+    padding: 0 30px;
 }
 
 .footer-row {
@@ -634,29 +636,374 @@ footer {
     padding-left: 5px;
 }
 
-.temp {
+.nav-menu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hamburger {
     display: none;
 }
 
-@media screen and (max-width: 1150px) {
-    header,
-    main,
-    section,
-    article,
-    footer {
-        display: none;
+.another-footer {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.another-footer .footer-col {
+    flex-basis: 45%;
+}
+
+@media screen and (max-width: 1100px) {
+    .header-content {
+        flex-basis: 45%;
     }
-    .temp {
-        display: block;
-        text-align: center;
-        font-weight: 700;
-        font-size: 50px;
-    }
-    body {
-        min-height: 100vh;
-        display: flex;
+    .header-img {
+        flex-basis: 55%;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
+        display: flex;
+    }
+    .header-content h1 {
+        font-size: 40px;
+    }
+    button {
+        font-size: 15px !important;
+        padding: 15px 30px !important;
+    }
+    .card p {
+        font-size: 13px;
+        line-height: 24px;
+        font-weight: 200;
+        padding: 0 5px;
+    }
+    .sticky-container {
+        max-height: unset;
+        max-width: 85%;
+        height: fit-content;
+    }
+    .sticky-container button,
+    .banner-content button {
+        margin: 30px auto 0;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    nav {
+        flex-direction: column;
+    }
+    .nav-menu {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .nav-menu button {
+        padding: 13px 20px !important;
+        margin-left: 15px;
+    }
+    .header-content,
+    .header-img {
+        flex-basis: 50%;
+    }
+    .header-container {
+        padding: 50px 15px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .fc-col-1 {
+        flex-basis: 60%;
+    }
+    .sticky-container {
+        max-width: 90%;
+    }
+    .class-img {
+        padding: 20px;
+    }
+    .sticky-container h2 {
+        font-size: 22px;
+    }
+    .class-container p {
+        font-size: 13px;
+    }
+    .sticky-container p {
+        font-size: 14px;
+    }
+    .curriculum-content {
+        flex-basis: 55%;
+    }
+    .curriculum-img {
+        flex-basis: 43%;
+    }
+    .ss-col-1 h2 {
+        font-size: 25px;
+    }
+    .ss-col-2,
+    .ls-col-2 {
+        flex-basis: 48%;
+    }
+    .ss-col-1 {
+        max-width: 300px;
+    }
+    .ss-col-2::before {
+        top: -60px;
+        left: -60px;
+    }
+    .review p {
+        font-size: 16px;
+    }
+    .reviewer-name {
+        padding-right: 0;
+    }
+    .ls-col-1 {
+        flex-basis: 45%;
+    }
+    .banner-container {
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .video {
+        height: 250px;
+    }
+    .fc-col-1,
+    .fc-col-2 {
+        flex-basis: 50%;
+    }
+    .curriculum-row {
+        flex-direction: column;
+    }
+    .curriculum-content {
+        order: 2;
+    }
+    .curriculum-img {
+        margin-bottom: 20px;
+    }
+    .number-container {
+        flex-wrap: wrap;
+    }
+    .number-item {
+        flex: 1;
+        width: 250px;
+        flex-basis: unset;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+    .nav-menu {
+        top: 100%;
+        left: 0;
+        position: absolute;
+        flex-direction: column;
+        background-color: antiquewhite;
+        text-align: center;
+        border-radius: 10px;
+        padding-bottom: 20px;
+        transform: translateX(-200%);
+        transition: all .3s ease;
+    }
+    .nav-menu button {
+        margin: 0 auto;
+        color: black;
+        border-color: black;
+    }
+    .nav-menu ul li {
+        display: block;
+        margin: 20px auto;
+    }
+    .nav-menu ul li a {
+        color: black;
+    }
+    .hamburger {
+        display: block;
+        color: white;
+    }
+    .hamburger span {
+        font-size: 40px;
+    }
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 25px;
+        max-width: 650px;
+    }
+    .header-content {
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .header-content h1 {
+        font-size: 50px;
+    }
+    .header-img {
+        padding: 30px;
+    }
+    .feature-card {
+        flex-direction: column;
+    }
+    .card h3 {
+        font-size: 30px;
+    }
+    .card p {
+        font-size: 18px;
+        line-height: 2;
+    }
+    .card {
+        padding: 10px 25px;
+    }
+    .feature-card {
+        max-width: 550px;
+        margin: auto;
+    }
+    .fc-row {
+        flex-direction: column;
+    }
+    .sticky-container {
+        max-width: 75%;
+        margin-top: 30px;
+    }
+    .class-img {
+        padding: 25px;
+    }
+    .sticky-container h2 {
+        font-size: 25px;
+    }
+    .sticky-container p {
+        font-size: 16px;
+    }
+    .fc-col-1 {
+        text-align: center;
+    }
+    .video {
+        height: 450px;
+    }
+    .ss-row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    article {
+        margin-top: 100px;
+        max-width: 650px;
+    }
+    .ss-col-1 {
+        max-width: 450px;
+    }
+    .ss-col-2 {
+        margin-top: 100px;
+        text-align: left;
+    }
+    .ls-row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .ls-col-2 {
+        margin-top: 20px;
+    }
+    .ss-col-1 h2 {
+        font-size: 30px;
+    }
+    .banner-container {
+        margin: 50px 0;
+        height: 350px;
+    }
+    .banner-content h2 {
+        font-size: 20px;
+    }
+    .banner-content p {
+        font-size: 14px;
+    }
+    .banner-content {
+        padding: 40px 50px;
+        top: 50px;
+        left: 40px;
+    }
+    .contactUs-container {
+        padding: 40px;
+        margin-bottom: 50px;
+        margin-top: 80px;
+        text-align: center;
+    }
+    .contactUs-row,
+    .footer-row {
+        flex-direction: column;
+    }
+    .contactUs-col {
+        margin: 20px;
+    }
+    main {
+        max-width: 650px;
+    }
+    footer {
+        max-width: 650px;
+        text-align: center;
+    }
+    .footer-col {
+        margin-bottom: 30px;
+    }
+    .ss-col-2::before {
+        left: -30px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header-content h1 {
+        font-size: 35px;
+    }
+    .card h3 {
+        font-size: 25px;
+    }
+    .video {
+        height: 300px;
+    }
+    .sticky-container {
+        max-width: 80%;
+    }
+    .course-col {
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .sticky-container {
+        max-width: 100%;
+    }
+    .contactUs-col h2 {
+        font-size: 22px;
+    }
+    .contactUs-col p {
+        font-size: 15px;
+    }
+    .contactUs-container {
+        padding: 10px;
+    }
+    .number-item {
+        padding: 30px 0;
+    }
+    .card p {
+        font-size: 15px;
+    }
+    .course-row {
+        flex-direction: column;
+        margin: auto;
+    }
+    .course-col {
+        margin: 10px 0 20px;
+    }
+    .banner-content {
+        padding: 40px 50px;
+        top: 70px;
+        left: 20px;
     }
 }
